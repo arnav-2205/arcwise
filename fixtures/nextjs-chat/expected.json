@@ -1,0 +1,18 @@
+{
+  "callSites": [
+    { "id": "app/api/chat/route.ts#POST", "provider": "Vercel AI SDK", "model": "gpt-4o", "maxTokens": null },
+    { "id": "lib/embed.ts#embedDocs", "provider": "Vercel AI SDK", "model": "text-embedding-3-small" },
+    { "id": "lib/title.ts#titleFor", "provider": "Vercel AI SDK", "model": "gpt-4o", "maxTokens": 20 }
+  ],
+  "redundantPairs": [],
+  "findings": [
+    { "rule": "llm-no-max-tokens", "file": "app/api/chat/route.ts", "line": 10 }
+  ],
+  "absentFindings": [
+    { "rule": "llm-no-max-tokens", "file": "lib/title.ts" }
+  ],
+  "recommendations": [
+    { "kind": "output-cap", "siteId": "app/api/chat/route.ts#POST" },
+    { "kind": "model-fit", "siteId": "lib/title.ts#titleFor" }
+  ]
+}

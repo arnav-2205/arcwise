@@ -1,0 +1,31 @@
+{
+  "callSites": [
+    { "id": "lib/ai/classify.ts#classifyTicket", "provider": "OpenAI", "model": "gpt-4o", "maxTokens": 20 },
+    { "id": "lib/ai/draft.ts#draftReply", "provider": "Anthropic", "model": "claude-sonnet-4-20250514", "maxTokens": null, "systemPromptTokens": 12005, "systemPromptStatic": true },
+    { "id": "lib/ai/embed.ts#embedArticles", "provider": "OpenAI", "model": "text-embedding-3-small", "inLoop": true },
+    { "id": "lib/ai/route.ts#routeTicket", "provider": "OpenAI", "model": "gpt-4o", "maxTokens": 10 },
+    { "id": "lib/ai/sentiment.ts#sentimentCheck", "provider": "OpenAI", "model": "gpt-4o", "inLoop": true },
+    { "id": "lib/ai/summarize.ts#summarizeThread", "provider": "OpenAI", "model": "gpt-4o", "maxTokens": 300 }
+  ],
+  "redundantPairs": [["lib/ai/classify.ts#classifyTicket", "lib/ai/route.ts#routeTicket"]],
+  "findings": [
+    { "rule": "hardcoded-secret", "file": "lib/legacyMailer.ts", "line": 2, "severity": "high" },
+    { "rule": "sql-concat", "file": "lib/db/ticketRepo.ts", "line": 10 },
+    { "rule": "llm-unvalidated-json", "file": "lib/ai/classify.ts", "line": 21 },
+    { "rule": "llm-no-max-tokens", "file": "lib/ai/draft.ts", "line": 12 },
+    { "rule": "floating-promise", "file": "app/api/webhook/route.ts", "line": 9 },
+    { "rule": "empty-catch", "file": "lib/slaTimer.ts", "line": 9 },
+    { "rule": "untested-central", "file": "lib/authGuard.ts", "line": 3 }
+  ],
+  "absentFindings": [
+    { "rule": "llm-no-error-handling", "file": "lib/ai/route.ts" }
+  ],
+  "recommendations": [
+    { "kind": "prompt-caching", "siteId": "lib/ai/draft.ts#draftReply" },
+    { "kind": "prompt-bloat", "siteId": "lib/ai/draft.ts#draftReply" },
+    { "kind": "output-cap", "siteId": "lib/ai/draft.ts#draftReply" },
+    { "kind": "redundant", "siteId": "lib/ai/route.ts#routeTicket" },
+    { "kind": "model-fit", "siteId": "lib/ai/sentiment.ts#sentimentCheck" },
+    { "kind": "batching", "siteId": "lib/ai/embed.ts#embedArticles" }
+  ]
+}

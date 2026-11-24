@@ -1,0 +1,20 @@
+{
+  "callSites": [
+    { "id": "app/llm.py#answer_question", "provider": "OpenAI", "model": "gpt-4o", "maxTokens": null },
+    { "id": "app/llm.py#tag_tickets", "provider": "OpenAI", "model": "gpt-4o", "maxTokens": 5, "inLoop": true }
+  ],
+  "redundantPairs": [],
+  "findings": [
+    { "rule": "sql-concat", "file": "app/db.py", "line": 8 },
+    { "rule": "empty-catch", "file": "app/db.py", "line": 16 },
+    { "rule": "http-no-timeout", "file": "app/status.py", "line": 5 },
+    { "rule": "llm-unvalidated-json", "file": "app/llm.py", "line": 21 },
+    { "rule": "llm-no-max-tokens", "file": "app/llm.py", "line": 14 }
+  ],
+  "absentFindings": [],
+  "recommendations": [
+    { "kind": "output-cap", "siteId": "app/llm.py#answer_question" },
+    { "kind": "model-fit", "siteId": "app/llm.py#tag_tickets" },
+    { "kind": "batching", "siteId": "app/llm.py#tag_tickets" }
+  ]
+}

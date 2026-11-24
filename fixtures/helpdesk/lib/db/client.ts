@@ -1,0 +1,10 @@
+import { Pool } from 'pg';
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+export const db = {
+  async query(sql: string, params: unknown[] = []) {
+    const res = await pool.query(sql, params);
+    return res.rows;
+  },
+};

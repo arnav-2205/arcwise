@@ -1,0 +1,29 @@
+{
+  "currency": "USD",
+  "unit": "per 1M tokens",
+  "note": "List prices. Re-check every entry against the source before relying on it; `npm run pricing:check` flags entries older than 30 days.",
+  "models": {
+    "gpt-4o":            { "provider": "OpenAI", "input": 2.5,  "output": 10,   "cachedInput": 1.25,  "batchInput": 1.25,  "batchOutput": 5,    "cheaper": "gpt-4o-mini",  "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-4o-mini":       { "provider": "OpenAI", "input": 0.15, "output": 0.6,  "cachedInput": 0.075, "batchInput": 0.075, "batchOutput": 0.3,                           "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-4.1":           { "provider": "OpenAI", "input": 2,    "output": 8,    "cachedInput": 0.5,   "batchInput": 1,     "batchOutput": 4,    "cheaper": "gpt-4.1-mini", "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-4.1-mini":      { "provider": "OpenAI", "input": 0.4,  "output": 1.6,  "cachedInput": 0.1,   "batchInput": 0.2,   "batchOutput": 0.8,  "cheaper": "gpt-4.1-nano", "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-4.1-nano":      { "provider": "OpenAI", "input": 0.1,  "output": 0.4,  "cachedInput": 0.025, "batchInput": 0.05,  "batchOutput": 0.2,                           "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-5":             { "provider": "OpenAI", "input": 1.25, "output": 10,   "cachedInput": 0.125, "batchInput": 0.625, "batchOutput": 5,    "cheaper": "gpt-5-mini",   "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-5-mini":        { "provider": "OpenAI", "input": 0.25, "output": 2,    "cachedInput": 0.025, "batchInput": 0.125, "batchOutput": 1,    "cheaper": "gpt-5-nano",   "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-5-nano":        { "provider": "OpenAI", "input": 0.05, "output": 0.4,  "cachedInput": 0.005, "batchInput": 0.025, "batchOutput": 0.2,                           "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "gpt-3.5-turbo":     { "provider": "OpenAI", "input": 0.5,  "output": 1.5,  "cachedInput": 0.5,   "batchInput": 0.25,  "batchOutput": 0.75, "cheaper": "gpt-4o-mini",  "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "text-embedding-3-small": { "provider": "OpenAI", "input": 0.02, "output": 0, "cachedInput": 0.02, "batchInput": 0.01, "batchOutput": 0, "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "text-embedding-3-large": { "provider": "OpenAI", "input": 0.13, "output": 0, "cachedInput": 0.13, "batchInput": 0.065, "batchOutput": 0, "cheaper": "text-embedding-3-small", "source": "https://openai.com/api/pricing/", "checked": "2025-10-01" },
+    "claude-opus-4":     { "provider": "Anthropic", "input": 15, "output": 75, "cachedInput": 1.5, "batchInput": 7.5, "batchOutput": 37.5, "cheaper": "claude-sonnet-4", "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-sonnet-4":   { "provider": "Anthropic", "input": 3,  "output": 15, "cachedInput": 0.3, "batchInput": 1.5, "batchOutput": 7.5,  "cheaper": "claude-haiku-4-5", "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-sonnet-4-5": { "provider": "Anthropic", "input": 3,  "output": 15, "cachedInput": 0.3, "batchInput": 1.5, "batchOutput": 7.5,  "cheaper": "claude-haiku-4-5", "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-3-7-sonnet": { "provider": "Anthropic", "input": 3,  "output": 15, "cachedInput": 0.3, "batchInput": 1.5, "batchOutput": 7.5,  "cheaper": "claude-3-5-haiku", "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-3-5-sonnet": { "provider": "Anthropic", "input": 3,  "output": 15, "cachedInput": 0.3, "batchInput": 1.5, "batchOutput": 7.5,  "cheaper": "claude-3-5-haiku", "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-haiku-4-5":  { "provider": "Anthropic", "input": 1,  "output": 5,  "cachedInput": 0.1, "batchInput": 0.5, "batchOutput": 2.5,  "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "claude-3-5-haiku":  { "provider": "Anthropic", "input": 0.8, "output": 4, "cachedInput": 0.08, "batchInput": 0.4, "batchOutput": 2,   "source": "https://www.anthropic.com/pricing#api", "checked": "2025-10-01" },
+    "gemini-2.5-pro":    { "provider": "Google", "input": 1.25, "output": 10,  "cachedInput": 0.31,  "batchInput": 0.625, "batchOutput": 5,   "cheaper": "gemini-2.5-flash", "source": "https://ai.google.dev/gemini-api/docs/pricing", "checked": "2025-10-01" },
+    "gemini-2.5-flash":  { "provider": "Google", "input": 0.3,  "output": 2.5, "cachedInput": 0.075, "batchInput": 0.15,  "batchOutput": 1.25, "cheaper": "gemini-2.5-flash-lite", "source": "https://ai.google.dev/gemini-api/docs/pricing", "checked": "2025-10-01" },
+    "gemini-2.5-flash-lite": { "provider": "Google", "input": 0.1, "output": 0.4, "cachedInput": 0.025, "batchInput": 0.05, "batchOutput": 0.2, "source": "https://ai.google.dev/gemini-api/docs/pricing", "checked": "2025-10-01" },
+    "gemini-2.0-flash":  { "provider": "Google", "input": 0.1,  "output": 0.4, "cachedInput": 0.025, "batchInput": 0.05,  "batchOutput": 0.2,  "source": "https://ai.google.dev/gemini-api/docs/pricing", "checked": "2025-10-01" }
+  }
+}

@@ -1,0 +1,4 @@
+Arcwise builds on ideas and prompts from Understand-Anything
+(https://github.com/Egonex-AI/Understand-Anything), licensed under the MIT License.
+When the upstream core and dashboard packages are vendored under packages/ua-core and
+packages/ua-dashboard, their LICENSE and copyright notices are kept unchanged.
